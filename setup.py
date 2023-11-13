@@ -5,4 +5,9 @@ setup(
     version='0.1',
     packages=find_packages(),
     install_requires=[],
+    entry_points={
+        'console_scripts': [
+            'math_quiz=math_quiz_script:main',
+        ],
+    },
 )
