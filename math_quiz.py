@@ -1,12 +1,10 @@
 import random
 
-
 def generate_random_integer(min_value, max_value):
     """
     Generate a random integer between min_value and max_value (inclusive).
     """
     return random.randint(min_value, max_value)
-
 
 def generate_random_operator():
     """
@@ -14,18 +12,19 @@ def generate_random_operator():
     """
     return random.choice(['+', '-', '*'])
 
-
 def calculate_result(num1, num2, operator):
     """
-    Calculate the result of the arithmetic operation.
+    Calculate the result of the arithmetic operation and return the problem and answer.
     """
     if operator == '+':
-        return num1 + num2
+        result = num1 + num2
     elif operator == '-':
-        return num1 - num2
+        result = num1 - num2
     elif operator == '*':
-        return num1 * num2
+        result = num1 * num2
 
+    problem = f"{num1} {operator} {num2}"
+    return problem, result
 
 def math_quiz():
     score = 0
@@ -56,7 +55,6 @@ def math_quiz():
             print(f"Wrong answer. The correct answer is {answer}.")
 
     print(f"\nGame over! Your score is: {score}/{total_questions}")
-
 
 if __name__ == "__main__":
     math_quiz()
